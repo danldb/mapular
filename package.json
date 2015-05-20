@@ -1,0 +1,26 @@
+{
+  "name": "ng-mapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danldb/ng-mapping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danldb/ng-mapping/issues"
+  },
+  "homepage": "https://github.com/danldb/ng-mapping",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "express": "^4.12.4"
+  },
+  "devDependencies": {
+    "protractor": "^2.0.0"
+  }
+}

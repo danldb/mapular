@@ -1,0 +1,1 @@
+var mapular = angular.module('Mapular', []);
