@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "e2e": "./node_modules/.bin/protractor test/e2e_tests/conf.js"
   },
   "repository": {
     "type": "git",
