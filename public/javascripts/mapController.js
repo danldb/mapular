@@ -1,5 +1,19 @@
 mapular.controller('MapCtrl', ['uiGmapGoogleMapApi', '$geolocation', function(uiGmapGoogleMapApi, $geolocation){
   var viewModel = this;
+
+  viewModel.myPosition = {
+    coords: {
+      latitude: 51.5173913,
+      longitude: -0.0733216
+    }
+  }
+
+  $geolocation.watchPosition({
+    timeout: 60000,
+    maximumAge: 250,
+    enableHighAccuracy: true
+  });
+
   var updateMap = function() {
     viewModel.map = {
       center: {
@@ -10,20 +24,7 @@ mapular.controller('MapCtrl', ['uiGmapGoogleMapApi', '$geolocation', function(ui
     };
   };
 
-  $geolocation.getCurrentPosition({
-    timeout: 60000
-  })
-
-  .then(function(position) {
-    viewModel.myPosition = position;
-    updateMap();
-    viewModel.myPosition = $geolocation.position;
-  });
+  updateMap();
+  viewModel.myPosition = $geolocation.position;
   
-  $geolocation.watchPosition({
-    timeout: 60000,
-    maximumAge: 250,
-    enableHighAccuracy: true
-  });
-
 }])
