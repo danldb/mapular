@@ -1,4 +1,4 @@
-mapular.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', '$geolocation', function($scope, uiGmapGoogleMapApi, $geolocation){
+mapular.controller('MapCtrl', ['uiGmapGoogleMapApi', '$geolocation', function(uiGmapGoogleMapApi, $geolocation){
   var viewModel = this;
   var updateMap = function() {
     viewModel.map = {
@@ -12,7 +12,9 @@ mapular.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', '$geolocation', f
 
   $geolocation.getCurrentPosition({
     timeout: 60000
-  }).then(function(position) {
+  })
+
+  .then(function(position) {
     viewModel.myPosition = position;
     updateMap();
     viewModel.myPosition = $geolocation.position;
@@ -23,9 +25,5 @@ mapular.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', '$geolocation', f
     maximumAge: 250,
     enableHighAccuracy: true
   });
-
-
-
-
 
 }])
