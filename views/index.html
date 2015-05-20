@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Mapular craptacular</title>
-
   </head>
   <body>
     <link rel="stylesheet" href="stylesheets/app.css">
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src='components/angular/angular.min.js'></script>
+    <script src='components/lodash/dist/lodash.min.js'></script>
+    <script src='components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+    <script src='components/ngGeolocation/ngGeolocation.min.js'></script>
     <script src='javascripts/app.js'></script>
-    <script src='javascripts/maps.js'></script>
-    <section id='map-canvas'></section>
+    <script src='javascripts/mapController.js'></script>
+
+    <div id="map_canvas" ng-controller="MapCtrl as ctrl">
+    <span>longitude: {{ctrl.myPosition.coords.longitude}} latitude: {{ctrl.myPosition.coords.latitude}}</span>
+    <ui-gmap-google-map center='ctrl.map.center' zoom='ctrl.map.zoom'></ui-gmap-google-map>
+</div>
   </body>
 </html>

@@ -1,1 +1,1 @@
-var mapular = angular.module('Mapular', []);
+var mapular = angular.module('Mapular', ['uiGmapgoogle-maps', 'ngGeolocation']);
