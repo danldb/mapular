@@ -14,17 +14,14 @@ mapular.controller('MapCtrl', ['uiGmapGoogleMapApi', '$geolocation', function(ui
     enableHighAccuracy: true
   });
 
-  var updateMap = function() {
-    viewModel.map = {
-      center: {
-        latitude: viewModel.myPosition.coords.latitude,
-        longitude: viewModel.myPosition.coords.longitude
-      },
-      zoom: 16
-    };
+  viewModel.map = {
+    center: {
+      latitude: viewModel.myPosition.coords.latitude,
+      longitude: viewModel.myPosition.coords.longitude
+    },
+    zoom: 16
   };
-
-  updateMap();
+  
   viewModel.myPosition = $geolocation.position;
   
 }])
