@@ -15,7 +15,7 @@
 
     <div id="map_canvas" ng-controller="MapCtrl as ctrl">
     <p>Coords: {{ctrl.myPosition}} </p>
-    <ui-gmap-google-map center='ctrl.map.center' zoom='ctrl.map.zoom'>
+    <ui-gmap-google-map center='ctrl.myPosition.coords' zoom='ctrl.map.zoom' pan='true'>
       <ui-gmap-marker idKey='0' coords='ctrl.myPosition.coords'>
 </ui-gmap-marker>
     </ui-gmap-google-map>
